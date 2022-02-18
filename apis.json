@@ -1,0 +1,5525 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+      "version": "1.0.0",
+      "title": "Swagger Petstore",
+      "termsOfService": "http://swagger.io/terms/",
+      "contact": {
+        "email": "apiteam@swagger.io"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "host": "petstore.swagger.io",
+    "basePath": "/v2",
+    "tags": [
+      {
+        "name": "pet",
+        "description": "Everything about your Pets",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://swagger.io"
+        }
+      },
+      {
+        "name": "store",
+        "description": "Access to Petstore orders"
+      },
+      {
+        "name": "user",
+        "description": "Operations about user",
+        "externalDocs": {
+          "description": "Find out more about our store",
+          "url": "http://swagger.io"
+        }
+      }
+    ],
+    "schemes": [
+      "https",
+      "http"
+    ],
+     "paths": {
+      "/api/v0/applications/{applicationid}/templates": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "create template under an application",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "applicationid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/applications/{applicationid}/templates/{templateid}/endpoint": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "get template endpoint details, under an application",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "instanceid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/applications/{applicationid}/templates/{templateid}/instances/{instanceid}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "GetInstanceContext",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/keys/{fieldgroupid}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "GetAvailableKeys",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "fieldgroupid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/templates/{templateid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "delete a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "templateid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "fetch template node by its id",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "templateid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/templates/{templateid}/nodes": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "fetch all nodes of a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "templateid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "add node under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "templateid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/templates/{templateid}/nodes/{fromnodeid}/relations": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "add realtion bewteen two nodes under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": " nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": " nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/templates/{templateid}/nodes/{fromnodeid}/relations/delete": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "delete a relation between two nodes under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v0/templates/{templateid}/nodes/{nodeid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "delete a node under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "fecth a node under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "set properties to a node under a template",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "nodeid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllLanguages",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "CreateAllowedLanguage",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create langauge "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteLangByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchLangByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateLanguageByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update language "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/block": {
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "BlockLanguageByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/dockerdetails": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateDockerDetailsByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update docker details "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/dockerfile/add": {
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "AddDockerFile",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/dockerfile/download": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadDockerFileByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/dockerfile/remove": {
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "RemoveDockerFile",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/allowedLanguages/{id}/unblock": {
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "UnBlockLanguageByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllApps",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateApp",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteAppByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAppByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DefineDeploymntByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FindAndUpdateApp",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps/{id}/microservice": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddMicroservice",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps/{id}/microservice/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteMicroservice",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps/{id}/run": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "Run",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/apps/{id}/stop": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "Stop",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/authorize": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "Authorize",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/checkIDs": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CheckIDs",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllContainersByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Create Docker Container"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/_run": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateAndStartContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchContainerByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditContainerMetaByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}/_stop": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "StopAndDeleteContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}/dockerip": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchContainerDockerNetworkIP",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}/logs": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadContainerLogs",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}/run": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "StartContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockercontainers/{id}/stop": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "StopContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockerimages": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllImagesByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockerimages/file": {
+        "post": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "BuildDockerImage",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Build Docker Image"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockerimages/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteImage",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchImageByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditImageMetaByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Edit metadata"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockerimages/{id}/_download": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadImage",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/dockerimages/{id}/logs": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadImageLogs",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documentTypes": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllDocumentTypesByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateDocumentType",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Create Document Type"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documentTypes/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteDocumentTypeByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchDocumentTypeByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditDocumentTypeByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Edit Document Type"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllDocumentsByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "CreateDocument",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Create Document"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/doctypes/{doctype}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByTypeFromOrganization",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/doctypes/{doctype}/docnames/{docname}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByNameFromOrganization",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByProjectID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "pid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}/doctypes/{doctype}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByTypeFromProject",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}/doctypes/{doctype}/docnames/{docname}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByNameFromProject",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}/microservices/{msid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByMicroServiceID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "msid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "msid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}/microservices/{msid}/doctypes/{doctype}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByTypeFromMicroService",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "doctype",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/projects/{pid}/microservices/{msid}/doctypes/{doctype}/docnames/{docname}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteByNameFromMicroService",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "docname",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "EditDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/documents/{id}/_download": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllEnvironments",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateEnvironments",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{evnid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteEnvironmentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "envid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchEnvironmentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "envid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{evnid}/variables": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllVariableByEnvID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateVariable",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "envid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{evnid}/variables/{varid}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteVariableByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "varid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "varid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchVariableByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "varid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "varid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteEnvironment",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchEnvironmentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditEnvironmentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_add": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddServiceByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Add service to Runtime Environment"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_down": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownEnvironment",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_ips": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "GetIPsByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_remove": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "RemoveServiceByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_up": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "ExecuteEnvironment",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/environments/{id}/_upsync": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "ExecuteEnvironmentSync",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/field/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/field/{id}/block": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "BlockFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllFieldGroupByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateFieldGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create field group"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/edit field group "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups/{id}/add": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/add field "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups/{id}/block": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "BlockFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups/{id}/remove": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "RemoveFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/remove field "
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fieldgroups/{id}/unblock": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UnBlockFieldGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fields": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllFieldBYPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateField",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create field input"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/fields/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/edit field"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/groups": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllGroups",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create group"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/groups/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/groups/{id}/resources": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddResourceToGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/add resource to group"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/groups/{id}/users": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddUserWithRoleToGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/add user with role to group"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetcAllMicroservices",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateMicroService",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteMicroservice",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FtechMicroserviceByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FindAndUpdateMicroservice",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllVersionsByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "mid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddVersion",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "mid",
+              "schema": {
+                "$ref": "#/definitions/create version"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteVersion",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchVersionByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditVersionByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{id}/dockers/commands/{type}": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateDocker",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "type",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "type",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "type",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{id}/envs": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateEnvironmentVariables",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update environment variables for version"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update environment variables for version"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{vid}": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddEnvironment",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/ADD Environment to microservice"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/ADD Environment to microservice"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{vid}/Containers": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateContainer",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/containers"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/containers"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{vid}/Dockerfile": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateDocker",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/create docker file"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/create docker file"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{vid}/apis": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllAPIBYPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateAPI",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/microservices/{mid}/versions/{vid}/apis/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteAPIByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAPIByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditAPIByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/notifications": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateNotification",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create notification"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/notifications/group": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateGroupNotification",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create group notification"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/notifications/users/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllNotifications",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/notifications/{id}": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateNotificationStatusByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update notification status"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/permissions": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllPermissions",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddPermission",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/add permission"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllProjects",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateProject",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create project"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteProjectByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchProjectByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateProjectByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update project"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{id}/definition": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddDefToProjectByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/add definition to project"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllServiceGroups",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "projectid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateServiceGroup",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "projectid",
+              "schema": {
+                "$ref": "#/definitions/create service group"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteServiceGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchServiceGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateServiceGroupByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/update servicegroup"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/update servicegroup"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}/assign/team": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AssignServiceGroupToTeam",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/assign servicegroup to team"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/assign servicegroup to team"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}/assign/vendor": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AssignServiceGroupToVendor",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/assign servicegroup to vendor"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/assign servicegroup to vendor"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}/deassign": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeAssign",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}/microservices/add": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddMicroService",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/add microservice"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/add microservice"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/projects/{projectid}/servicegroups/{serviceGroupID}/microservices/remove": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "RemoveMicroService",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/remove microservice"
+              }
+            },
+            {
+              "in": "path",
+              "name": "serviceGroupID",
+              "schema": {
+                "$ref": "#/definitions/remove microservice"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/repositories": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllRepositoryByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "CreateDocument",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Repository Manager"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/repositories/microservices/{mid}/versions/{vid}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FindRepositoryByVersionID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "vid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/repositories/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchRepositoryByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json",
+            "multipart/form-data"
+          ],
+          "operationId": "EditDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/repositories/{id}/_download": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DownloadDocumentByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resourceTypes": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllResourceTypes",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddResourceType",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/add resourcetype"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resourceTypes/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchResourceType",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UpdateSchemaOfResourceType",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/update schema"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllResources",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddResource",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/add resource"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/fields": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllFieldByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/fields{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchResourceByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "resourceid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/{id}/fields": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddField",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Add field"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/{id}/status": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "RemoveStatusToResource",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "resourceid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddStatusToResource",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "resourceid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/resources/{resourceid}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchResourceById",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "resourceid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/roles": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllRoles",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddRole",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/add resourcetype"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/roles/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchRole",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/status": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllStatus",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "SetStatusTOResource",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/status/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchStatusByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "statusid",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/stimulate": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "Requestor",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/stimulate/Template": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "TemplateProcessor",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/stimulate/microservice": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "SimulateMicroservice",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/teams": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllTeams",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateTeam",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/Teammanger"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/teams/{id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchTeamByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAndUpdateTeam",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Teammanger"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/teams/{id}/block/{action}": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "BlockAndUnblockTeamByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "action",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "action",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/teams/{id}/lock/{action}": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "LockAndUnlockTeamByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "action",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            },
+            {
+              "in": "path",
+              "name": "action",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/teams/{id}/users": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "RemoveUserFromTeam",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Teamanger"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddUserToTeamByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/AddUsertoTeam"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/user/{id}/claims": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchUserClaims",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllUsers",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddUser",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/add user"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users/login": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "LoginUser",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users/{id}": {
+        "delete": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "DeleteUserByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchUser",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "AddResourceWithRoleToUser",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/add resource with role"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users/{id}/createtokens": {
+        "": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateTokens",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users/{id}/forgetpassword": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "ForgetPassoword",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/users/{id}/verifycode": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "VerifyCodeforforgetPassword",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/vendors": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchAllVendorByPagenation",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "CreateVendor",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "",
+              "schema": {
+                "$ref": "#/definitions/create vendor"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/vendors/{Id}": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "FetchVendorByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        },
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "EditVendorByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/Edit Vendor"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0/vendors/{Id}/{action}": {
+        "post": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "BlockVendorByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/api/v1.0.0field/{id}/unblock": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "UnBlockFieldByID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      },
+      "/users/{id}/verifyemails": {
+        "put": {
+          "consumes": [
+            "application/json"
+          ],
+          "operationId": "VerifyEmail",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "$ref": "#/definitions/"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ]
+        }
+      }
+    },
+    "definitions": {
+      "ADD Environment to microservice": {
+        "$id": "https://example.com/person.schema.json",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "description": "Microservice Manager, environment schema",
+        "properties": {
+          "environmentid": {
+            "pattern": "^[a-f0-9]{24}$",
+            "type": "string"
+          }
+        },
+        "title": "ADD Environment to microservice",
+        "type": "object"
+      },
+      "Add field": {
+        "description": " ",
+        "properties": {
+          "description": {
+            "maxLength": 150,
+            "type": "string"
+          },
+          "name": {
+            "description": "The unique identifier for a product",
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "rules": {
+            "type": "object"
+          },
+          "type": {
+            "enum": [
+              "string",
+              "number",
+              "integer",
+              "boolean",
+              "null"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "Add field",
+        "type": "object"
+      },
+      "Add service to Runtime Environment": {
+        "description": "api schema for Adding service to Runtime Environment",
+        "properties": {
+          "container_name": {
+            "maxLength": 20,
+            "pattern": "^([a-z])[a-z0-9]*$",
+            "type": "string"
+          },
+          "imageid": {
+            "maxLength": 24,
+            "minLength": 24,
+            "pattern": "^[a-f0-9]+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "imageid",
+          "container_name"
+        ],
+        "title": "Add service to Runtime Environment",
+        "type": "object"
+      },
+      "AddUsertoTeam": {
+        "$id": "",
+        "$schema": "",
+        "description": "Adding user into a team",
+        "properties": {
+          "users": {
+            "pattern": "^([a-zA-Z])([a-z0-9A-Z]+)$",
+            "type": "string"
+          }
+        },
+        "title": "AddUsertoTeam",
+        "type": "object"
+      },
+      "Build Docker Image": {
+        "description": "api schema for Building Docker Image",
+        "properties": {
+          "buildoptions": {
+            "properties": {
+              "Tags": {
+                "items": {
+                  "pattern": "^[a-z]{1,15}:[a-z0-9.-_]{1,15}$",
+                  "type": "string"
+                },
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "Tags"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "buildoptions"
+        ],
+        "title": "Build Docker Image",
+        "type": "object"
+      },
+      "Create Docker Container": {
+        "description": "api schema for Creating Docker Container",
+        "properties": {
+          "config": {
+            "properties": {
+              "Image": {
+                "pattern": "^[a-f0-9]{24}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Image"
+            ],
+            "type": "object"
+          },
+          "containername": {
+            "pattern": "^([a-z])[a-z0-9]{0,100}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "config",
+          "containername"
+        ],
+        "title": "Create Docker Container",
+        "type": "object"
+      },
+      "Create Document": {
+        "description": "api schema for creating and storing Document",
+        "properties": {
+          "documenttype": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          },
+          "level": {
+            "maximum": 2,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "microserviceId": {
+            "maxLength": 24,
+            "minLength": 24,
+            "pattern": "^[a-f0-9]+$",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          },
+          "projectId": {
+            "maxLength": 24,
+            "minLength": 24,
+            "pattern": "^[a-f0-9]+$",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "version",
+          "documenttype",
+          "level"
+        ],
+        "title": "Create Document",
+        "type": "object"
+      },
+      "Create Document Type": {
+        "description": "api schema for creating and storing Document Type",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "Create Document Type",
+        "type": "object"
+      },
+      "Define Runtime Environment": {
+        "description": "api schema for Defining Runtime Environment",
+        "properties": {
+          "name": {
+            "maxLength": 20,
+            "pattern": "^([a-z])[a-z0-9]*$",
+            "type": "string"
+          },
+          "services": {
+            "items": {
+              "properties": {
+                "container_name": {
+                  "pattern": "^[a-zA-Z0-9.-_]{1,50}$",
+                  "type": "string"
+                },
+                "imageid": {
+                  "maxLength": 24,
+                  "minLength": 24,
+                  "pattern": "^[a-f0-9]+$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "imageid",
+                "container_name"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "name",
+          "services"
+        ],
+        "title": "Define Runtime Environment",
+        "type": "object"
+      },
+      "Edit Document Meta Data": {
+        "description": "api schema for Editing and Document Meta Data",
+        "properties": {
+          "level": {
+            "maximum": 2,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "microserviceId": {
+            "maxLength": 24,
+            "minLength": 24,
+            "pattern": "^[a-f0-9]+$",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          },
+          "projectId": {
+            "maxLength": 24,
+            "minLength": 24,
+            "pattern": "^[a-f0-9]+$",
+            "type": "string"
+          },
+          "type": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "title": "Edit Document Meta Data",
+        "type": "object"
+      },
+      "Edit Document Type": {
+        "description": "api schema for Editing Document Type",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 30,
+            "pattern": "^([a-zA-Z])[a-zA-Z0-9]*$",
+            "type": "string"
+          }
+        },
+        "title": "Edit Document Type",
+        "type": "object"
+      },
+      "Edit Vendor": {
+        "description": " ",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "title": "Edit Vendor",
+        "type": "object"
+      },
+      "Edit metadata": {
+        "description": "api schema for Editing metadata",
+        "properties": {},
+        "title": "Edit metadata",
+        "type": "object"
+      },
+      "Repository Manager": {
+        "properties": {
+          "microserviceID": {
+            "pattern": "^[a-f0-9]{24}$",
+            "type": "string"
+          },
+          "versionID": {
+            "pattern": "^[a-f0-9]{24}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "microserviceID",
+          "versionID"
+        ],
+        "title": "Repository Manager",
+        "type": "object"
+      },
+      "Teamanger": {
+        "$id": "",
+        "$schema": "",
+        "description": "remove User from team",
+        "properties": {
+          "users": {
+            "pattern": "^([a-zA-Z])([a-z0-9A-Z]+)$",
+            "type": "string"
+          }
+        },
+        "title": "Teamanger",
+        "type": "object"
+      },
+      "Teammanger": {
+        "$id": "",
+        "$schema": "",
+        "description": "Edit Team",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "title": "Teammanger",
+        "type": "object"
+      },
+      "add definition to project": {
+        "description": "payload schema for adddeftoproject api",
+        "properties": {
+          "projectdef": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "projectdef"
+        ],
+        "title": "add definition to project",
+        "type": "object"
+      },
+      "add field ": {
+        "description": "payload schema for addfield api",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "title": "add field ",
+        "type": "object"
+      },
+      "add microservice": {
+        "description": "payload schema for addmicroservice api",
+        "properties": {
+          "microservices": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "microservices"
+        ],
+        "title": "add microservice",
+        "type": "object"
+      },
+      "add permission": {
+        "description": "payload schema for add permission api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "key": {
+            "maxLength": 5,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "key"
+        ],
+        "title": "add permission",
+        "type": "object"
+      },
+      "add resource": {
+        "description": "payload schema for add resource api",
+        "properties": {
+          "parentresource": {
+            "type": "string"
+          },
+          "resourceinstance": {
+            "type": "string"
+          },
+          "resourcetype": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resourcetype",
+          "resourceinstance"
+        ],
+        "title": "add resource",
+        "type": "object"
+      },
+      "add resource to group": {
+        "description": "payload schema for addresourcetogroup api",
+        "properties": {
+          "resource": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource"
+        ],
+        "title": "add resource to group",
+        "type": "object"
+      },
+      "add resource with role": {
+        "description": "payload schema for add resource with role to user api",
+        "properties": {
+          "resource": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource",
+          "role"
+        ],
+        "title": "add resource with role",
+        "type": "object"
+      },
+      "add resourcetype": {
+        "description": "payload schema for add resourcetype api",
+        "properties": {
+          "claims": {
+            "items": {
+              "properties": {
+                "permissions": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "resourcetype": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "resourcetype",
+                "permissions"
+              ],
+              "type": "object"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "claims"
+        ],
+        "title": "add resourcetype",
+        "type": "object"
+      },
+      "add user": {
+        "description": "payload schema for add user api",
+        "properties": {
+          "defaultrole": {
+            "type": "string"
+          },
+          "userid": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "userid",
+          "defaultrole"
+        ],
+        "title": "add user",
+        "type": "object"
+      },
+      "add user with role to group": {
+        "description": "payload schema for adduserwithroletogroup api",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "user": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user",
+          "role"
+        ],
+        "title": "add user with role to group",
+        "type": "object"
+      },
+      "assign servicegroup to team": {
+        "description": "payload schema for assignservicegrouptoteam api",
+        "properties": {
+          "assignedid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "assignedid"
+        ],
+        "title": "assign servicegroup to team",
+        "type": "object"
+      },
+      "assign servicegroup to vendor": {
+        "description": "payload schema for assignservicegrouptovendor api",
+        "properties": {
+          "assignedid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "assignedid"
+        ],
+        "title": "assign servicegroup to vendor",
+        "type": "object"
+      },
+      "containers": {
+        "$id": "https://example.com/person.schema.json",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "description": "Microservice Manager, environment schema",
+        "properties": {
+          "containername": {
+            "maxLength": 25,
+            "pattern": "^([a-z])[a-z0-9]{0,100}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "containername"
+        ],
+        "title": "containers",
+        "type": "object"
+      },
+      "create docker file": {
+        "$schema": "",
+        "description": " ",
+        "properties": {
+          "base": {
+            "properties": {
+              "imagename": {
+                "pattern": "^[a-z]+$",
+                "type": "string"
+              },
+              "imagetag": {
+                "pattern": "^[a-z]+$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "imagename",
+              "imagetag"
+            ],
+            "type": "object"
+          },
+          "os": {
+            "pattern": "^[a-z]+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base",
+          "os"
+        ],
+        "title": "create docker file",
+        "type": "object"
+      },
+      "create field group": {
+        "description": "payload schema for createfieldgroup api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "fields": {
+            "items": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type",
+                "id"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "fields"
+        ],
+        "title": "create field group",
+        "type": "object"
+      },
+      "create field input": {
+        "$schema": "",
+        "description": "all the glossary terms associated with our project.",
+        "properties": {
+          "description": {
+            "maxLength": 150,
+            "type": "string"
+          },
+          "name": {
+            "description": "The unique identifier for a product",
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "rules": {
+            "type": "object"
+          },
+          "type": {
+            "enum": [
+              "string",
+              "number",
+              "integer",
+              "boolean",
+              "null"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "type"
+        ],
+        "title": "create field input",
+        "type": "object"
+      },
+      "create group": {
+        "description": "payload schema for creategroup api",
+        "properties": {
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "create group",
+        "type": "object"
+      },
+      "create group notification": {
+        "description": "payload schema for creategroupnotification api",
+        "properties": {
+          "isemailrequired": {
+            "type": "bool"
+          },
+          "message": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "meta": {
+            "type": "object"
+          },
+          "users": {
+            "items": {
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "userid": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "userid",
+                "email"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "users",
+          "message",
+          "isemailrequired"
+        ],
+        "title": "create group notification",
+        "type": "object"
+      },
+      "create langauge ": {
+        "description": "payload schema for createlanguage api",
+        "properties": {
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "create langauge ",
+        "type": "object"
+      },
+      "create notification": {
+        "description": "payload schema for createnotification api",
+        "properties": {
+          "email": {
+            "format": "email",
+            "type": "string"
+          },
+          "isemailrequired": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "meta": {
+            "type": "object"
+          },
+          "userid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userid",
+          "email",
+          "message",
+          "isemailrequired"
+        ],
+        "title": "create notification",
+        "type": "object"
+      },
+      "create project": {
+        "description": "payload schema for createproject api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "languages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "name": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "create project",
+        "type": "object"
+      },
+      "create service group": {
+        "description": "payload schema for createservicegroup api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "microservices": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "name": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "projectid"
+        ],
+        "title": "create service group",
+        "type": "object"
+      },
+      "create vendor": {
+        "description": "vendor",
+        "properties": {
+          "address": {
+            "maxLength": 300,
+            "minLength": 2,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "contactNumber": {
+            "maxLength": 15,
+            "minLength": 10,
+            "pattern": "^[0-9]+$",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 150,
+            "minLength": 2,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "email": {
+            "format": "email",
+            "type": "string"
+          },
+          "name": {
+            "minLength": 2,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "contactNumber",
+          "email"
+        ],
+        "title": "create vendor",
+        "type": "object"
+      },
+      "create version": {
+        "$schema": "",
+        "description": "can create version for a microservice",
+        "port": {
+          "pattern": "([0-9])",
+          "type": "string"
+        },
+        "properties": {
+          "Docker": {
+            "properties": {
+              "buildcommands": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "runcommands": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "description": {
+            "maxLength": 300,
+            "type": "string"
+          },
+          "environementVariables": {
+            "type": "object"
+          },
+          "versionTag": {
+            "maxLength": 15,
+            "minLength": 2,
+            "pattern": "^([A-Z])([0-9.a-z]*)$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "versionTag",
+          "environmentVariables",
+          "port"
+        ],
+        "title": "create version",
+        "type": "object"
+      },
+      "edit field": {
+        "$schema": "",
+        "description": "all the glossary terms associated with our project.",
+        "properties": {
+          "description": {
+            "maxLength": 150,
+            "type": "string"
+          },
+          "name": {
+            "description": "The unique identifier for a product",
+            "minLength": 1,
+            "type": "string"
+          },
+          "rules": {
+            "type": "object"
+          },
+          "type": {
+            "enum": [
+              "string",
+              "number",
+              "integer",
+              "boolean",
+              "null"
+            ],
+            "type": "string"
+          }
+        },
+        "title": "edit field",
+        "type": "object"
+      },
+      "edit field group ": {
+        "description": "payload schema for editfieldgeoup api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 20,
+            "minLength": 1,
+            "pattern": "^([a-z])([a-z0-9]*)$",
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "title": "edit field group ",
+        "type": "object"
+      },
+      "remove field ": {
+        "description": "payload schema for removefield api",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "title": "remove field ",
+        "type": "object"
+      },
+      "remove microservice": {
+        "description": "payload schema for removemicroservice api",
+        "properties": {
+          "microservices": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "microservices"
+        ],
+        "title": "remove microservice",
+        "type": "object"
+      },
+      "update docker details ": {
+        "description": "payload schema for updatedockerdetails api",
+        "properties": {
+          "dockerdetails": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "dockerdetails"
+        ],
+        "title": "update docker details ",
+        "type": "object"
+      },
+      "update environment variables for version": {
+        "$id": "https://example.com/person.schema.json",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "description": "Microservice Manager, environment schema",
+        "properties": {
+          "environmentVariables": {
+            "properties": {
+              "database_mongodb_uri": {
+                "type": "string"
+              },
+              "servicecomb_registry_address": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "database_mongodb_uri",
+              "servicecomb_registry_address"
+            ],
+            "type": "object"
+          }
+        },
+        "title": "update environment variables for version",
+        "type": "object"
+      },
+      "update language ": {
+        "description": "payload schema for updatelanguage api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "title": "update language ",
+        "type": "object"
+      },
+      "update notification status": {
+        "description": "payload schema for updatenotificationstatus api",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "update notification status",
+        "type": "object"
+      },
+      "update project": {
+        "description": "payload schema for updateproject api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "languages": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "name": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          },
+          "staus": {
+            "type": "string"
+          }
+        },
+        "title": "update project",
+        "type": "object"
+      },
+      "update schema": {
+        "description": "payload schema for updateschema api",
+        "properties": {
+          "schema": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "schema"
+        ],
+        "title": "update schema",
+        "type": "object"
+      },
+      "update servicegroup": {
+        "description": "payload schema for updateservicegroup api",
+        "properties": {
+          "description": {
+            "maxLength": 300,
+            "minLength": 1,
+            "type": "string"
+          },
+          "microservices": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "name": {
+            "maxLength": 30,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "title": "update servicegroup",
+        "type": "object"
+      }
+    }    
+  }
